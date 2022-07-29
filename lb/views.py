@@ -41,7 +41,7 @@ def history(req: HttpRequest, username: str):
                 **model_to_dict(submisson, exclude = ['id', 'user', 'avatar'])
             }
             for submisson in res
-        ])
+        ], safe = False)
     else:
         return JsonResponse({
             'code': -1
